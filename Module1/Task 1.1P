@@ -1,0 +1,23 @@
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(3, INPUT);
+  pinMode(13, OUTPUT);
+}
+
+void loop()
+{
+  if(digitalRead(3) == HIGH)
+  {
+  	Serial.println("Motion Detected"); 
+    digitalWrite(13, HIGH);
+  	delay(1000);
+    digitalWrite(13, LOW);
+  }
+  
+  else
+  {
+   	Serial.println("No Motion Detected");
+    delay(1000);
+  }
+}
